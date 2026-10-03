@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bauyrdaq - Премиум Семейный Ресторан</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'qazaq-gold': '#D4AF37',
+                        'qazaq-dark': '#121212',
+                        'qazaq-red': '#8B0000',
+                        'qazaq-gray': '#1e1e1e'
+                    },
+                    boxShadow: {
+                        'gold': '0 4px 14px 0 rgba(212, 175, 55, 0.39)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #121212; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b5952f; }
+
+        .hero-pattern {
+            background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.8) 0%, rgba(18, 18, 18, 0.4) 50%, rgba(18, 18, 18, 1) 100%), 
+                              url('https://images.unsplash.com/photo-1544025162-8111142154ea?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-gray-800 font-sans">
+
+    <!-- Навигация -->
+    <nav class="fixed w-full z-50 bg-qazaq-dark/95 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center h-12">
+                <a href="#" class="text-2xl md:text-3xl font-extrabold tracking-widest text-qazaq-gold uppercase">BAUYRDAQ</a>
+                <div class="hidden md:flex space-x-8 items-center font-medium">
+                    <a href="#about" class="text-white hover:text-qazaq-gold transition">О нас</a>
+                    <a href="#menu" class="text-white hover:text-qazaq-gold transition">Меню</a>
+                    <a href="#booking" class="text-white hover:text-qazaq-gold transition">Бронь стола</a>
+                    <a href="#contacts" class="text-white hover:text-qazaq-gold transition">Контакты</a>
+                </div>
+                <a href="#booking" class="bg-qazaq-gold text-qazaq-dark font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition">
+                    Забронировать
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный баннер -->
+    <section class="hero-pattern min-h-screen flex items-center justify-center text-center relative overflow-hidden pt-20">
+        <div class="max-w-5xl px-4 z-10 flex flex-col items-center">
+            <span class="inline-block py-1 px-4 rounded-full border border-qazaq-gold text-qazaq-gold text-xs md:text-sm font-semibold tracking-widest uppercase mb-6 bg-qazaq-gold/10 backdrop-blur-sm">
+                Qazaq Fast Food & Семейный Ресторан
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 leading-tight drop-shadow-2xl">
+                Вкус <span class="text-qazaq-gold">Традиций</span><br>в новом формате
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-3xl font-light">
+                Объединяем вековые рецепты казахской кухни и современный ритм жизни. 100% Халяль.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 w-full sm:w-auto">
+                <a href="#menu" class="bg-qazaq-gold hover:bg-yellow-500 text-qazaq-dark font-bold text-lg py-4 px-10 rounded-full transition shadow-gold">
+                    Смотреть меню
+                </a>
+                <a href="https://wa.me/77079582582" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-qazaq-dark font-bold text-lg py-4 px-10 rounded-full transition">
+                    Написать в WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="py-24 bg-[#fafafa]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 relative">
+                <div class="absolute inset-0 bg-qazaq-gold rounded-2xl transform translate-x-4 translate-y-4 opacity-40"></div>
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1000" alt="Интерьер" class="relative z-10 rounded-2xl shadow-2xl object-cover h-[450px] w-full">
+            </div>
+            <div class="lg:w-1/2">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="h-[2px] w-12 bg-qazaq-gold"></div>
+                    <h3 class="text-qazaq-gold font-bold uppercase tracking-widest text-sm">О заведении</h3>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-qazaq-dark mb-6 leading-tight">Место, где живет душа народа</h2>
+                <p class="text-gray-600 mb-8 text-lg leading-relaxed font-light">
+                    Bauyrdaq — это уютное пространство для семейных ужинов, встреч с друзьями и проведения незабываемых моментов. Традиционный баурсак, свежее мясо и авторская подача.
+                </p>
+                <div class="grid grid-cols-2 gap-y-6 gap-x-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-qazaq-gold/20 p-3 rounded-xl text-qazaq-gold text-xl"><i class="fas fa-leaf"></i></div>
+                        <h4 class="font-bold text-qazaq-dark text-base">100% Халяль</h4>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-qazaq-gold/20 p-3 rounded-xl text-qazaq-gold text-xl"><i class="fas fa-heart"></i></div>
+                        <h4 class="font-bold text-qazaq-dark text-base">Семейный уют</h4>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-qazaq-gold/20 p-3 rounded-xl text-qazaq-gold text-xl"><i class="fas fa-bolt"></i></div>
+                        <h4 class="font-bold text-qazaq-dark text-base">Быстрая подача</h4>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-qazaq-gold/20 p-3 rounded-xl text-qazaq-gold text-xl"><i class="fas fa-crown"></i></div>
+                        <h4 class="font-bold text-qazaq-dark text-base">VIP сервис</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Меню превью -->
+    <section id="menu" class="py-24 bg-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-qazaq-dark mb-4">Наше Меню</h2>
+            <p class="text-gray-500 mb-12">Попробуйте наши фирменные сеты и национальные блюда</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-2">Фирменный Бауырдақ</h3>
+                    <p class="text-gray-500 text-sm mb-4">Сочное обжаренное мясо с ароматными специями и свежими баурсаками.</p>
+                    <span class="text-qazaq-gold font-extrabold text-lg">от 2 490 ₸</span>
+                </div>
+                <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-2">Комбо Сет №1</h3>
+                    <p class="text-gray-500 text-sm mb-4">Бауырдақ, картофель фри, соус на выбор и освежающий напиток.</p>
+                    <span class="text-qazaq-gold font-extrabold text-lg">3 190 ₸</span>
+                </div>
+                <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-2">Горячие Баурсаки</h3>
+                    <p class="text-gray-500 text-sm mb-4">Пышные, только что из казана традиционные баурсаки с медом или каймаком.</p>
+                    <span class="text-qazaq-gold font-extrabold text-lg">от 890 ₸</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер / Контакты -->
+    <footer id="contacts" class="bg-qazaq-dark text-white py-16 text-center border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-extrabold text-qazaq-gold tracking-widest uppercase mb-4">BAUYRDAQ</h2>
+            <p class="text-gray-400 mb-8">Ждем вас в гости за незабываемым вкусом!</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="tel:+77079582582" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center gap-2">
+                    <i class="fas fa-phone"></i> +7 707 958 25 82
+                </a>
+                <a href="https://wa.me/77079582582" target="_blank" class="px-6 py-3 rounded-full bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/30 transition flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            <p class="text-xs text-gray-600">© 2026 BAUYRDAQ. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
